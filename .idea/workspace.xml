@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="" />
+    <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/GenerateTerrain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyRandom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -34,7 +44,7 @@
     "Application.Driver - macOS.executor": "Run",
     "Application.Driver.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "trunk",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/chasemiller/Documents/College/CS5410/LundarLanding",
     "project.structure.last.edited": "Libraries",

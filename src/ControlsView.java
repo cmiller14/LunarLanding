@@ -23,8 +23,14 @@ public class ControlsView extends GameStateView {
     }
 
     @Override
+    public void initializeSession() {
+        nextGameState = GameStateEnum.Controls;
+    }
+
+    @Override
     public GameStateEnum processInput(double elapsedTime) {
-        return null;
+        inputKeyboard.update(elapsedTime);
+        return nextGameState;
     }
 
     @Override
