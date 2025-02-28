@@ -1,6 +1,7 @@
 import edu.usu.graphics.Color;
 import edu.usu.graphics.Font;
 import edu.usu.graphics.Graphics2D;
+import org.joml.Vector3f;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -9,6 +10,7 @@ public class GamePlayView extends GameStateView {
     private KeyboardInput inputKeyboard;
     private GameStateEnum nextGameState = GameStateEnum.GamePlay;
     private Font font;
+    private GameModel gameModel;
 
     @Override
     public void initialize(Graphics2D graphics) {
@@ -25,6 +27,8 @@ public class GamePlayView extends GameStateView {
 
     @Override
     public void initializeSession() {
+        gameModel = new GameModel();
+        gameModel.initialize(graphics);
         nextGameState = GameStateEnum.GamePlay;
     }
 
@@ -37,14 +41,11 @@ public class GamePlayView extends GameStateView {
 
     @Override
     public void update(double elapsedTime) {
+        gameModel.update(elapsedTime);
     }
 
     @Override
     public void render(double elapsedTime) {
-        final String message = "Isn't this game fun!";
-        final float height = 0.075f;
-        final float width = font.measureTextWidth(message, height);
 
-        graphics.drawTextByHeight(font, message, 0.0f - width / 2, 0 - height / 2, height, Color.YELLOW);
     }
 }
