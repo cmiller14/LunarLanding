@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/images/square-outline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Appearance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Ground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/KeyboardControlled.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Movable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/Ground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/KeyboardInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/Renderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePlayView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePlayView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStateDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LunarLanding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenerateTerrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenerateTerrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GenerateTerrain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

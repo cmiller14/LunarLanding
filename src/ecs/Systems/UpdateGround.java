@@ -1,5 +1,7 @@
 package ecs.Systems;
 
+import org.joml.Vector3f;
+
 public class UpdateGround extends System{
     private final int ITERATIONS = 7;
     @Override
@@ -15,14 +17,21 @@ public class UpdateGround extends System{
         if (ground.generate) {
             for (int i = 0; i < ITERATIONS; i++) {
                 // start with the line
+                for (var line : ground.lines) {
+                    // find the midpoint
+                    Vector3f midpoint = new Vector3f();
+                    midpoint.set(line.start).add(line.finish).mul(0.5f);
+                    // compute the y elevation using
+                    float g = 0f;
+                    float s = 0f;
+                    float r = 0f;
+                    float y = (-.5f) * (line.start.y + line.finish.y) + r;
+                    // y = 1/2(a_y+b_y)+r
+                    // r = sg|b_x-a_x|
+                    // s = surface roughness factor
+                    // g = gaussian random number with mean of 0 and variance of 1
 
-                // find the mid point
-
-                // compute the y elevation using
-                // y = 1/2(a_y+b_y)+r
-                // r = sg|b_x-a_x|
-                // s = surface roughness factor
-                // g = gaussian random number with mean of 0 and variance of 1
+                }
 
             }
         }
