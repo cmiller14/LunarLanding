@@ -11,19 +11,9 @@ public class Ground extends Component {
     public boolean generate;
     public Color color;
 
-    public class Line {
-        public Vector3f start;
-        public Vector3f finish;
-
-        public Line(Vector3f start, Vector3f finish) {
-            this.start = start;
-            this.finish = finish;
-        }
-    }
-
     public Ground(Color color, Vector3f start, Vector3f finish) {
         this.lines = new ArrayList<>();
-        this.lines.add(new Line(start, finish));
+        this.lines.add(new Line(start, finish, false));
         this.generate = true;
         this.color = color;
     }

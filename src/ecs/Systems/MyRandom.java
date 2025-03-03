@@ -1,3 +1,5 @@
+package ecs.Systems;
+
 import org.joml.Vector2f;
 
 import java.util.Random;
@@ -65,4 +67,3 @@ public class MyRandom extends Random {
     private double y2;
     private boolean usePrevious = false;
 }
-

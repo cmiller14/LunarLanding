@@ -66,8 +66,10 @@ public class GameModel {
 
     private void initializeGround() {
         MyRandom rnd = new MyRandom();
-        Vector3f start = new Vector3f(-1.0f, 0.0f, 0.0f);
-        Vector3f finish = new Vector3f(1.0f, 0.0f, 0.0f);
+        float startY = rnd.nextRange(-0.1f, 0.5f);
+        float finishY = rnd.nextRange(-0.1f, 0.5f);
+        Vector3f start = new Vector3f(-1.0f, startY, 0.0f);
+        Vector3f finish = new Vector3f(1.0f, finishY, 0.0f);
         var proposed = Ground.create(start, finish, Color.WHITE);
         addEntity(proposed);
     }

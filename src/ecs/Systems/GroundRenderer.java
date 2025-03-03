@@ -1,6 +1,8 @@
 package ecs.Systems;
 
+import edu.usu.graphics.Color;
 import edu.usu.graphics.Graphics2D;
+import org.joml.Vector3f;
 
 
 public class GroundRenderer extends System {
