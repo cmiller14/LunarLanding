@@ -1,18 +1,19 @@
 package ecs.Systems;
 
 import ecs.Components.Line;
+import ecs.Entities.Ground;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdateGround extends System{
+public class UpdateGround extends System {
     private final int ITERATIONS = 7;
     @Override
     public void update(double elapsedTime) {
         // this is where I will update and generate the ground
         for (var entity : entities.values()) {
-            updateGround(entity);
+            if (entity.contains(ecs.Components.Ground.class)) updateGround(entity);
         }
     }
 

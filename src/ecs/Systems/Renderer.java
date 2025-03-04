@@ -17,10 +17,6 @@ public class Renderer extends System {
 
     @Override
     public void update(double elapsedTime) {
-        // TODO: Draw a blue background for the whole screen gameplay area
-        // Rectangle area = new Rectangle();
-        // graphics.draw(area, Color.BLUE);
-
         // Draw each of the game entities!
         for (var entity : entities.values()) {
             renderEntity(entity);
