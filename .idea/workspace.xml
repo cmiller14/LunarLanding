@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/images/ship.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/ship_low_res.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Ship.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/SpaceShipRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LunarLanding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/KeyboardInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/KeyboardInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
