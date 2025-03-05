@@ -24,13 +24,6 @@ public class GroundRenderer extends System {
         for (var entity : entities.values()) {
             renderEntity(entity);
         }
-
-//        Rectangle shipRec = new Rectangle(0.0f, 0.0f, 0.1f, 0.01f, 0.12f);
-//        graphics.draw(appearance.image, shipRec, Color.WHITE);
-
-//        Vector3f start = new Vector3f(-1.0f, 0.8f, 0.0f);
-//        Vector3f end = new Vector3f(1.0f, 0.8f, 0.0f);
-//        graphics.draw(start, end, Color.WHITE);
     }
 
     private void renderEntity(ecs.Entities.Entity entity) {

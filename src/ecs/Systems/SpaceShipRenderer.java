@@ -3,6 +3,7 @@ package ecs.Systems;
 import edu.usu.graphics.Color;
 import edu.usu.graphics.Graphics2D;
 import edu.usu.graphics.Rectangle;
+import org.joml.Vector2f;
 
 public class SpaceShipRenderer extends System{
 
@@ -29,14 +30,19 @@ public class SpaceShipRenderer extends System{
         var appearance = entity.get(ecs.Components.Appearance.class);
         var position = entity.get(ecs.Components.Position.class);
 
-        // TODO: calculate the left and top according to the position
         float left = position.x;
         float top = position.y;
         float width = 1/5f;
         float height = 1/5f;
 
         Rectangle shipRec = new Rectangle(left, top, width, height, 0.12f);
-        graphics.draw(appearance.image, shipRec, Color.WHITE);
+
+        Vector2f center = new Vector2f(
+                shipRec.left + shipRec.width / 2,
+                shipRec.top + shipRec.height / 2);
+
+        graphics.draw(appearance.image, shipRec, position.rotation, center, Color.WHITE);
+
 
     }
 }

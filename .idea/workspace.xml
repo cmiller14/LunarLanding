@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Ground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/SpaceShipRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/SpaceShipRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +90,20 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="allChars.length()" language="JAVA" />
