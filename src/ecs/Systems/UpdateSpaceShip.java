@@ -17,7 +17,9 @@ public class UpdateSpaceShip extends System {
         var position = entity.get(ecs.Components.Position.class);
         var movable = entity.get(ecs.Components.Movable.class);
         float ACCELERATION = 0.12f;
+        float ROTATION = 1.5f;
 
+        updateRotation((float) elapsedTime, movable, position, ROTATION);
         updateVelocity((float) elapsedTime, movable, position, ACCELERATION);
 
         // add gravity
@@ -28,6 +30,16 @@ public class UpdateSpaceShip extends System {
 
         // now I need to update the rotation according to the velocity I think
 
+
+    }
+
+    private void updateRotation(float elapsedTime, Movable movable, Position position, float rotationRate) {
+        if (movable.facing.contains(Movable.Direction.Left)) {
+            position.rotation -= rotationRate * elapsedTime;
+        }
+        if (movable.facing.contains(Movable.Direction.Right)) {
+            position.rotation += rotationRate * elapsedTime;
+        }
     }
 
     private static void updatePosition(float elapsedTime, Position position, Movable movable) {
@@ -40,18 +52,14 @@ public class UpdateSpaceShip extends System {
     }
 
     private static void updateVelocity(float elapsedTime, Movable movable, Position position, float ACCELERATION) {
-        // first I should update the velocity based on acceleration
+        // first I should update the velocity based on acceleration and rotation
         if (movable.facing.contains(Movable.Direction.Up)) {
-            position.velocityY += (-ACCELERATION) * elapsedTime;
-        }
-        if (movable.facing.contains(Movable.Direction.Down)) {
-            position.velocityY += ACCELERATION * elapsedTime;
-        }
-        if (movable.facing.contains(Movable.Direction.Left)) {
-            position.velocityX += (-ACCELERATION) * elapsedTime;
-        }
-        if (movable.facing.contains(Movable.Direction.Right)) {
-            position.velocityX += ACCELERATION * elapsedTime;
+            float accelerationX = ACCELERATION * (float)Math.cos(position.rotation);
+            float accelerationY = ACCELERATION * (float)Math.sin(position.rotation);
+
+            position.velocityY -= accelerationY * elapsedTime;
+            position.velocityX -= accelerationX * elapsedTime;
+
         }
     }
 }

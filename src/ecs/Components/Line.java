@@ -14,8 +14,8 @@ public class Line extends Component {
     }
 
     public Line(Line line) {
-        this.start = line.start;
-        this.finish = line.finish;
+        this.start = new Vector3f(line.start);
+        this.finish = new Vector3f(line.finish);
         this.safe = line.safe;
     }
 }

@@ -52,12 +52,8 @@ public class UpdateGround extends System {
     }
 
     private void addSafeZones(ecs.Entities.Entity entity) {
-        // connect the start and the end to the safe line
-        // to
         var ground = entity.get(ecs.Components.Ground.class);
-        // TODO: connect the line to the existing lines
         connectLines(ground);
-
     }
 
     private void connectLines(Ground ground) {
@@ -65,7 +61,6 @@ public class UpdateGround extends System {
             // generate two safe lines
             Line safeZone1 = generateSafeLine(null);
             Line safeZone2 = generateSafeLine(safeZone1);
-
             // connect all the lines
             Vector3f start = ground.lines.getFirst().start;
             Vector3f finish = ground.lines.getLast().finish;
@@ -110,7 +105,7 @@ public class UpdateGround extends System {
     private Line generateSafeLine(Line existingLine) {
         MyRandom rnd = new MyRandom();
         // must be a certain WIDTH
-        float WIDTH = 0.15f;
+        float WIDTH = 0.20f;
         // must be a certain distance from the edge
         float minX = -1.0f + (WIDTH * 0.15f);
         float maxX = 1.0f - (WIDTH + (WIDTH * 0.15f));

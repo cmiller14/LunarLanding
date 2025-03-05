@@ -12,6 +12,6 @@ public class Position extends Component {
         this.y = y;
         this.velocityX = 0.0f;
         this.velocityY = 0.0f;
-        this.rotation = 0.0f;
+        this.rotation = (float)Math.PI/2;
     }
 }

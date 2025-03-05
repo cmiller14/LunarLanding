@@ -41,7 +41,7 @@ public class SpaceShipRenderer extends System{
                 shipRec.left + shipRec.width / 2,
                 shipRec.top + shipRec.height / 2);
 
-        graphics.draw(appearance.image, shipRec, position.rotation, center, Color.WHITE);
+        graphics.draw(appearance.image, shipRec, position.rotation + (float)Math.PI*3/2, center, Color.WHITE);
 
 
     }
