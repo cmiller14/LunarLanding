@@ -16,6 +16,19 @@ public class UpdateSpaceShip extends System {
     private void updateShip(ecs.Entities.Entity entity, double elapsedTime) {
         var position = entity.get(ecs.Components.Position.class);
         var movable = entity.get(ecs.Components.Movable.class);
+        var ship = entity.get(ecs.Components.Ship.class);
+
+        // stop ship if win or collision
+        if (ship.collision) {
+            position.velocityX = 0.0f;
+            position.velocityY = 0.0f;
+            return;
+        }
+        if (ship.win) {
+            position.velocityX = 0.0f;
+            position.velocityY = 0.0f;
+        }
+
         float ACCELERATION = 0.12f;
         float ROTATION = 1.5f;
 
@@ -27,8 +40,6 @@ public class UpdateSpaceShip extends System {
         position.velocityY += GRAVITY * (float)elapsedTime;
 
         updatePosition((float) elapsedTime, position, movable);
-
-        // now I need to update the rotation according to the velocity I think
 
 
     }

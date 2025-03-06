@@ -12,6 +12,7 @@ public class Ground {
     public static Entity create(Vector3f start, Vector3f finish, Color color) {
         var ground = new Entity();
         ground.add(new ecs.Components.Ground(color, start, finish));
+        ground.add(new ecs.Components.Collision());
         return ground;
     }
 }

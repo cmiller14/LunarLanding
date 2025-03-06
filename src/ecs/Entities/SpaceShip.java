@@ -10,7 +10,7 @@ import static org.lwjgl.glfw.GLFW.*;
 public class SpaceShip {
 
 
-    public static Entity create(Texture image, Color color, float x, float y) {
+    public static Entity create(Texture image, Color color, float x, float y, float width) {
 
         final double MOVE_INTERVAL = .150; // seconds
 
@@ -18,7 +18,7 @@ public class SpaceShip {
 
         spaceShip.add(new ecs.Components.Ship());
         spaceShip.add(new ecs.Components.Appearance(image, color));
-        spaceShip.add(new ecs.Components.Position(x, y));
+        spaceShip.add(new ecs.Components.Position(x, y, width));
         spaceShip.add(new ecs.Components.Movable(ecs.Components.Movable.Direction.Stopped, MOVE_INTERVAL));
         spaceShip.add(new ecs.Components.KeyboardControlled(
                 Map.of(
@@ -27,6 +27,7 @@ public class SpaceShip {
                         GLFW_KEY_LEFT, ecs.Components.Movable.Direction.Left,
                         GLFW_KEY_RIGHT, ecs.Components.Movable.Direction.Right
                 )));
+        spaceShip.add(new ecs.Components.Collision());
 
         return spaceShip;
     }

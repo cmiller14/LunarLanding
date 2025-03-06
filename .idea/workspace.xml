@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/images/spaceBackground.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Background.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Collision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/BackGround.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/CollisionUpdater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Components/Appearance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Appearance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Movable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Components/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/Ground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Systems/SpaceShipRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/SpaceShipRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/usu/graphics/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/usu/graphics/Color.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +101,25 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GameModel.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ecs/Systems/Renderer.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GameModel.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="allChars.length()" language="JAVA" />

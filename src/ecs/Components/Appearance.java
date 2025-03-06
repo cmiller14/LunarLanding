@@ -6,7 +6,6 @@ import edu.usu.graphics.Texture;
 public class Appearance extends Component {
     public Texture image;
     public Color color;
-    public float rotation;
 
     public Appearance(Texture image, Color color) {
         this.image = image;

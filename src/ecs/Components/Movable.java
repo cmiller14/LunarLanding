@@ -13,9 +13,7 @@ public class Movable extends Component {
     }
 
     public HashSet<Direction> facing;
-    public int segmentsToAdd = 0;
     public double moveInterval; // seconds
-    public double elapsedInterval;
 
     public Movable(Direction facing, double moveInterval) {
         this.facing = new HashSet<>();

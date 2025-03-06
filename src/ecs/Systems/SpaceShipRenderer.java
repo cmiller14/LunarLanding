@@ -32,16 +32,16 @@ public class SpaceShipRenderer extends System{
 
         float left = position.x;
         float top = position.y;
-        float width = 1/5f;
-        float height = 1/5f;
+        float width = position.width;
+        float height = position.width;
 
         Rectangle shipRec = new Rectangle(left, top, width, height, 0.12f);
 
         Vector2f center = new Vector2f(
-                shipRec.left + shipRec.width / 2,
-                shipRec.top + shipRec.height / 2);
+                left + shipRec.width / 2,
+                top + shipRec.height / 2);
 
-        graphics.draw(appearance.image, shipRec, position.rotation + (float)Math.PI*3/2, center, Color.WHITE);
+        graphics.draw(appearance.image, shipRec, position.rotation + (float)Math.PI*3/2, center, appearance.color);
 
 
     }
