@@ -28,6 +28,10 @@ public class Renderer extends System {
                 Rectangle area = new Rectangle(-1f,-1f,2.0f,2.0f);
                 graphics.draw(appearance.image, area, appearance.color);
             }
+            // render the time
+            // render the score
+            // render the fuel
+            // render the
             }
         }
     }

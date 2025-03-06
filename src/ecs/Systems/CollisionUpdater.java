@@ -39,12 +39,21 @@ public class CollisionUpdater extends System {
                             shipPosition.y + shipPosition.width / 2);
                     boolean collision = lineCircleIntersection(pt1, pt2, circleCenter, shipPosition.radius);
                     if (collision) {
+                        // check to see if win or crash
+                        // On one of the pre-defined safe landing zones
+                        // Speed less than 2 m/s
+                        // Angle between 355 and 5 degrees
+                        // Note: Upon safe landing, player can no longer control the ship; rotation and thrust controls controls disabled.
                         shipComp.collision = true;
                     }
                 }
 
             }
         }
+    }
+
+    private boolean checkWinOrCrash() {
+        return true;
     }
 
     private boolean lineCircleIntersection(Vector2f pt1, Vector2f pt2, Vector2f circleCenter, float circleRadius) {
