@@ -20,7 +20,7 @@ public class GamePlayView extends GameStateView {
 
         inputKeyboard = new KeyboardInput(graphics.getWindow());
         // When ESC is pressed, set the appropriate new game state
-        inputKeyboard.registerCommand(GLFW_KEY_ESCAPE, true, (double elapsedTime) -> {
+        inputKeyboard.registerCommand(GLFW_KEY_Q, true, (double elapsedTime) -> {
             nextGameState = GameStateEnum.MainMenu;
         });
     }

@@ -32,7 +32,7 @@ public class KeyboardInput {
                 entry.getValue().callback.invoke(elapsedTime);
             }
 
-            // For the next time around, remember the current state of the key (pressed or not)
+            // For the next timeRemaining around, remember the current state of the key (pressed or not)
             keysPressed.put(entry.getKey(), glfwGetKey(window, entry.getKey()) == GLFW_PRESS);
         }
     }

@@ -11,12 +11,14 @@ public class Ground extends Component {
     public boolean generate;
     public Color color;
     public int numSafeZones;
+    public boolean complete;
 
-    public Ground(Color color, Vector3f start, Vector3f finish) {
+    public Ground(Color color, int numSafeZones, Vector3f start, Vector3f finish) {
         this.lines = new ArrayList<>();
         this.lines.add(new Line(start, finish, false));
         this.generate = true;
         this.color = color;
-        this.numSafeZones = 2;
+        this.numSafeZones = numSafeZones;
+        this.complete = false;
     }
 }

@@ -9,9 +9,9 @@ public class Ground {
     // There will also need to be polygons to draw down from the line
 
 
-    public static Entity create(Vector3f start, Vector3f finish, Color color) {
+    public static Entity create(Vector3f start, int numSafeZones, Vector3f finish, Color color) {
         var ground = new Entity();
-        ground.add(new ecs.Components.Ground(color, start, finish));
+        ground.add(new ecs.Components.Ground(color, numSafeZones, start, finish));
         ground.add(new ecs.Components.Collision());
         return ground;
     }

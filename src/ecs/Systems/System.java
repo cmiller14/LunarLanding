@@ -55,6 +55,8 @@ public abstract class System {
         return entities.remove(id) != null;
     }
 
+    public void removeAll() {entities.clear();}
+
     /**
      * Derived systems must override this method to perform update logic specific to that system.
      */

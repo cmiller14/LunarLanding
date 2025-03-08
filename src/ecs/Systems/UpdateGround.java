@@ -2,6 +2,7 @@ package ecs.Systems;
 
 import ecs.Components.Ground;
 import ecs.Components.Line;
+import ecs.Entities.Entity;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
@@ -9,6 +10,17 @@ import java.util.List;
 import java.util.Random;
 
 public class UpdateGround extends System {
+
+    public interface IGroundComplete {
+        void invoke(Entity entity);
+    }
+
+    private final UpdateGround.IGroundComplete onComplete;
+
+    public UpdateGround(IGroundComplete onComplete) {
+        this.onComplete = onComplete;
+    }
+
     private final int ITERATIONS = 7;
     @Override
     public void update(double elapsedTime) {
@@ -22,33 +34,40 @@ public class UpdateGround extends System {
         MyRandom random = new MyRandom();
         var ground = entity.get(ecs.Components.Ground.class);
         List<Line> newLines = new ArrayList<>();
+        if (ground.numSafeZones < 1) {
+            onComplete.invoke(entity);
+        }
         if (ground.generate) {
-            addSafeZones(entity);
-            for (int i = 0; i < ITERATIONS; i++) {
-                // start with the line
-                for (var line : ground.lines) {
-                    if (!line.safe) {
-                        Vector3f midpoint = new Vector3f();
-                        midpoint.set(line.start).add(line.finish).mul(0.5f);
-                        // compute the y elevation using
-                        float g = (float)random.nextGaussian(0, 1);
-                        float s = 0.5f;
-                        float r = s * g * Math.abs(line.finish.x - line.start.x);
-                        midpoint.y += r;
-                        midpoint.y = Math.min(Math.max(midpoint.y, -0.1f), 0.5f);
-                        Line newLine1 = new Line(line.start, midpoint, false);
-                        Line newLine2 = new Line(midpoint, line.finish, false);
-                        newLines.add(newLine1);
-                        newLines.add(newLine2);
-                    } else {
-                        newLines.add(line);
-                    }
-                }
-                ground.lines = deepCopy(newLines);
-                newLines.clear();
-            }
+            generateGround(entity, ground, random, newLines);
         }
         ground.generate = false;
+    }
+
+    private void generateGround(Entity entity, Ground ground, MyRandom random, List<Line> newLines) {
+        addSafeZones(entity);
+        for (int i = 0; i < ITERATIONS; i++) {
+            // start with the line
+            for (var line : ground.lines) {
+                if (!line.safe) {
+                    Vector3f midpoint = new Vector3f();
+                    midpoint.set(line.start).add(line.finish).mul(0.5f);
+                    // compute the y elevation using
+                    float g = (float) random.nextGaussian(0, 1);
+                    float s = 0.5f;
+                    float r = s * g * Math.abs(line.finish.x - line.start.x);
+                    midpoint.y += r;
+                    midpoint.y = Math.min(Math.max(midpoint.y, -0.1f), 0.5f);
+                    Line newLine1 = new Line(line.start, midpoint, false);
+                    Line newLine2 = new Line(midpoint, line.finish, false);
+                    newLines.add(newLine1);
+                    newLines.add(newLine2);
+                } else {
+                    newLines.add(line);
+                }
+            }
+            ground.lines = deepCopy(newLines);
+            newLines.clear();
+        }
     }
 
     private void addSafeZones(ecs.Entities.Entity entity) {

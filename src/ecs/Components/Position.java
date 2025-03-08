@@ -18,4 +18,14 @@ public class Position extends Component {
         this.width = width;
         this.radius = 1/20f;
     }
+
+    public Position(Position position) {
+        this.x = position.x;
+        this.y = position.y;
+        this.velocityY = position.velocityY;
+        this.velocityX = position.velocityX;
+        this.rotation = position.rotation;
+        this.width = position.width;
+        this.radius = position.radius;
+    }
 }

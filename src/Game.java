@@ -40,14 +40,14 @@ public class Game {
     }
 
     public void run() {
-        // Grab the first time
+        // Grab the first timeRemaining
         double previousTime = glfwGetTime();
 
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
         while (!graphics.shouldClose()) {
             double currentTime = glfwGetTime();
-            double elapsedTime = currentTime - previousTime;    // elapsed time is in seconds
+            double elapsedTime = currentTime - previousTime;    // elapsed timeRemaining is in seconds
             previousTime = currentTime;
 
             processInput(elapsedTime);

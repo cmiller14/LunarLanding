@@ -16,4 +16,9 @@ public class KeyboardControlled extends Component {
             lookup.put(mapping.getValue(), mapping.getKey());
         }
     }
+
+    public KeyboardControlled() {
+        this.keys = null;
+        this.lookup = null;
+    };
 }

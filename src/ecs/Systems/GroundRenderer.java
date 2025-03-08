@@ -30,7 +30,10 @@ public class GroundRenderer extends System {
         for (int l = 0; l < ground.lines.size(); l++) {
             // draw out each line
             var line = ground.lines.get(l);
-            fillGround(line, 0.05f, 0.11f, Color.GREY);
+            if (line.safe) {
+                fillGround(line, 0.01f, 0.12f, Color.GREEN);
+            }
+            fillGround(line, 0.01f, 0.11f, Color.GREY);
             fillGround(line, 1.0f, 0.1f, Color.BLACK);
         }
     }

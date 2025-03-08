@@ -43,8 +43,13 @@ public class CollisionUpdater extends System {
                         // On one of the pre-defined safe landing zones
                         // Speed less than 2 m/s
                         // Angle between 355 and 5 degrees
-                        // Note: Upon safe landing, player can no longer control the ship; rotation and thrust controls controls disabled.
-                        shipComp.collision = true;
+                        double angleDegrees = shipComp.angle * (180/Math.PI);
+                        boolean acceptableAngle = angleDegrees >= -5 && angleDegrees < 5;
+                        if (line.safe && shipComp.speed <= 2 && acceptableAngle) {
+                            shipComp.win = true;
+                        } else {
+                            shipComp.collision = true;
+                        }
                     }
                 }
 
