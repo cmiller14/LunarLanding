@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/ParticleUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/ParticleUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/WinMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/WinMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamestate.json" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LunarLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LunarLanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

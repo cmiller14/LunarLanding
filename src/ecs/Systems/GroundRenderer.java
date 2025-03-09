@@ -71,22 +71,5 @@ public class GroundRenderer extends System {
         graphics.draw(t1, color);
         graphics.draw(t2, color);
 
-//        float dyNormal = dy/length * depth;
-//        float dxNormal = dx/length * depth;
-//
-//        if (dyNormal < 0) {
-//            dyNormal = dyNormal * -1.0f;
-//            dxNormal = dxNormal * -1.0f;
-//        }
-//
-//        Vector3f newStart = new Vector3f(line.start.x + dxNormal, line.start.y + dyNormal, layer);
-//        Vector3f newFinish = new Vector3f(line.finish.x + dxNormal, line.finish.y + dyNormal, layer);
-//
-//        Triangle t1 = new Triangle(line.start, line.finish, newFinish);
-//        Triangle t2 = new Triangle(line.start, newFinish, newStart);
-//
-//        graphics.draw(t1, color);
-//        graphics.draw(t2, color);
-
     }
 }

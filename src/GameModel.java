@@ -43,7 +43,7 @@ public class GameModel {
     private Entity ship;
     private SoundManager audio;
     private final float startX = 0.0f;
-    private final float startY = -0.65f;
+    private final float startY = -0.55f;
 
     private Entity pause;
     private Entity winMessage;
