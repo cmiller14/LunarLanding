@@ -23,6 +23,7 @@ public class AboutView extends GameStateView {
         });
     }
 
+
     @Override
     public void initializeSession() {
         nextGameState = GameStateEnum.About;

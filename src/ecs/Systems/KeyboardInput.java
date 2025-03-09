@@ -54,6 +54,9 @@ public class KeyboardInput extends System {
             if (entity.contains(ecs.Components.Pause.class)) {
                 pauseKeys(entity);
             }
+            if (entity.contains(ecs.Components.Particles.class)) {
+                createParticles(entity);
+            }
         }
 
         for (var entry : commandEntries.entrySet()) {
@@ -69,6 +72,11 @@ public class KeyboardInput extends System {
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS && isKeyNewlyPressed(GLFW_KEY_ESCAPE)) {
             pause.pause = !pause.pause;
         }
+    }
+
+    private void createParticles(Entity entity) {
+        var particles = entity.get(ecs.Components.Particles.class);
+        particles.createParticles = glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS;
     }
 
     private void shipKeys(Entity entity) {

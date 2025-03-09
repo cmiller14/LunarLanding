@@ -5,37 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/images/pause-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Countdown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Pause.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/WinMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/Countdown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/Pause.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/WinMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/Countdown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/Pause.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/Updater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/WinMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/smoke.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HighScoresGameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Serializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Fire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Particle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Particles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/Particles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/ParticleRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/ParticleUpdater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LunarLanding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LunarLanding.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AboutView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePlayView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePlayView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyboardInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyboardInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Appearance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Appearance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Ground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/KeyboardControlled.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/KeyboardControlled.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HelpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelpView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HighScoresView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HighScoresView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenuView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Components/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/BackGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/BackGround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/Ground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/CollisionUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/CollisionUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/GroundRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/WinMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/WinMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Systems/KeyboardInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/KeyboardInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/System.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/MyRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/MyRandom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/Pause.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/Pause.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
     </list>
@@ -67,8 +62,13 @@
     "Application.Driver - Windows/Linux.executor": "Run",
     "Application.Driver - macOS.executor": "Run",
     "Application.Driver.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/chasemiller/Documents/College/CS5410/LundarLanding/resources/images",
@@ -81,6 +81,11 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/images" />
+      <recent name="$PROJECT_DIR$/.idea/libraries" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Driver - macOS">

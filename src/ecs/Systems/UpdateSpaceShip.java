@@ -14,13 +14,13 @@ public class UpdateSpaceShip extends System {
     }
 
     private final UpdateSpaceShip.IShipComplete onComplete;
-    private final UpdateSpaceShip.IShipComplete onWin;
+    private final UpdateSpaceShip.IShipComplete onCrash;
     private final UpdateSpaceShip.IShipComplete onPause;
 
     public UpdateSpaceShip(IShipComplete onComplete, IShipComplete onWin, IShipComplete onPause) {
         super(ecs.Components.Ship.class);
         this.onComplete = onComplete;
-        this.onWin = onWin;
+        this.onCrash = onWin;
         this.onPause = onPause;
         this.pauseShip = new Ship();
         this.pausePosition = new Position(0.0f, 0.0f, 0.0f);
@@ -48,7 +48,7 @@ public class UpdateSpaceShip extends System {
         }
 
         if (ship.level > 2) {
-            onWin.invoke();
+            onCrash.invoke();
             return;
         }
 
@@ -79,6 +79,10 @@ public class UpdateSpaceShip extends System {
         if (ship.collision) {
             position.velocityY = 0f;
             position.velocityX = 0f;
+            ship.crashCountdown -= elapsedTime;
+            if (ship.crashCountdown < 0) {
+                onCrash.invoke();
+            }
             return;
         }
 

@@ -67,6 +67,7 @@ public class MainMenuView extends GameStateView {
         nextGameState = GameStateEnum.MainMenu;
     }
 
+
     @Override
     public GameStateEnum processInput(double elapsedTime) {
         // Updating the keyboard can change the nextGameState

@@ -27,6 +27,7 @@ public class ControlsView extends GameStateView {
         nextGameState = GameStateEnum.Controls;
     }
 
+
     @Override
     public GameStateEnum processInput(double elapsedTime) {
         inputKeyboard.update(elapsedTime);

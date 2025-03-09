@@ -1,6 +1,9 @@
+import ecs.Components.WinMessage;
 import edu.usu.graphics.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -10,12 +13,14 @@ public class Game {
     private IGameState currentState;
     GameStateEnum nextStateEnum = GameStateEnum.MainMenu;
     GameStateEnum prevStateEnum = GameStateEnum.MainMenu;
+    private Serializer serializer;
 
     public Game(Graphics2D graphics) {
         this.graphics = graphics;
     }
 
     public void initialize() {
+        this.serializer = new Serializer();
         states = new HashMap<>() {
             {
                 put(GameStateEnum.MainMenu, new MainMenuView());
@@ -25,6 +30,7 @@ public class Game {
                 put(GameStateEnum.About, new AboutView());
                 put(GameStateEnum.Controls, new ControlsView());
             }
+
         };
 
         // Give all game states a chance to initialize, other than the constructor

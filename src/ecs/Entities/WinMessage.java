@@ -4,7 +4,6 @@ import ecs.Components.Appearance;
 import edu.usu.graphics.Color;
 import edu.usu.graphics.Font;
 import edu.usu.graphics.Texture;
-import org.joml.Vector3f;
 
 public class WinMessage {
     public static Entity create(Texture image, Font font, int score) {

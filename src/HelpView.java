@@ -28,6 +28,7 @@ public class HelpView extends GameStateView {
         nextGameState = GameStateEnum.Help;
     }
 
+
     @Override
     public GameStateEnum processInput(double elapsedTime) {
         // Updating the keyboard can change the nextGameState

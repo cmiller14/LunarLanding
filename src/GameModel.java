@@ -9,12 +9,14 @@ import edu.usu.graphics.*;
 import edu.usu.graphics.Color;
 import edu.usu.graphics.Font;
 import edu.usu.graphics.Graphics2D;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameModel {
+    private Serializer serializer = new Serializer();
 
     private final List<Entity> removeThese = new ArrayList<>();
     private final List<Entity> addThese = new ArrayList<>();
@@ -29,6 +31,8 @@ public class GameModel {
     private ecs.Systems.Countdown sysCountdown;
     private ecs.Systems.Pause sysPause;
     private ecs.Systems.WinMessage sysWinMessage;
+    private ecs.Systems.ParticleUpdater sysParticleUpdater;
+    private ecs.Systems.ParticleRenderer sysParticleRenderer;
 
     private Entity ground;
     private int safeZones = 2;
@@ -38,36 +42,51 @@ public class GameModel {
     private final float startY = -0.65f;
 
     private Entity pause;
+    private Entity winMessage;
+    private Entity smokeParticles;
+    private Entity fireParticles;
 
     public void initialize(Graphics2D graphics) {
         var ship = new Texture("resources/images/ship.png");
         var background = new Texture("resources/images/spaceBackground.jpg");
         var pauseImage = new Texture("resources/images/pause-background.jpg");
+        var smokeImage = new Texture("resources/images/smoke.png");
+        var fireImage = new Texture("resources/images/fire.png");
         var font = new Font("resources/fonts/Roboto-Regular.ttf", 36, false);
         var fontCountDown = new Font("resources/fonts/Roboto-Regular.ttf", 72, false);
 
+        initializeSystems(graphics, pauseImage, fontCountDown);
+        initializeBackground(background, font);
+        initializeGround();
+        initializeShip(ship, font);
+        initializeParticle(smokeImage, fireImage);
+        initializeCountdown(fontCountDown);
+    }
+
+    private void initializeSystems(Graphics2D graphics, Texture pauseImage, Font fontCountDown) {
         sysKeyboardInput = new KeyboardInput(graphics.getWindow());
         sysGroundRenderer = new GroundRenderer(graphics);
         sysGroundUpdater = new UpdateGround(
                 (Entity entity) -> { // on win
                     removeEntity(entity);
                     removeAllEntities();
-                    // save the score
                     // display win message with score
                     initializeWinMessage(pauseImage, fontCountDown, this.ship.get(Ship.class).score);
+                    // save the score
+                    this.serializer.saveScore(winMessage.get(ecs.Components.WinMessage.class));
                     // instructions for how to close escape
                 }
         );
         sysSpaceShipRenderer = new SpaceShipRenderer(graphics);
         sysSpaceShipUpdater = new UpdateSpaceShip(
-                () -> { // onComplete
+                () -> { // onWin
                     initializeCountdown(fontCountDown);
                     removeEntity(this.ground);
                     safeZones--;
                     initializeGround();
                 },
-                () -> { // onWin
-                    removeEntity(this.ship);
+                () -> { // crash
+                    initializeWinMessage(pauseImage, fontCountDown, this.ship.get(Ship.class).score);
                 },
                 () -> { // onPause
                     initializePause(pauseImage, fontCountDown);
@@ -78,9 +97,11 @@ public class GameModel {
         sysCountdown = new Countdown(graphics,
                 (Entity entity) -> {
                     removeEntity(entity);
-                    ecs.Entities.SpaceShip.enableControls(this.ship);
-                    ecs.Entities.SpaceShip.enableMovement(this.ship);
+                    SpaceShip.enableControls(this.ship);
+                    SpaceShip.enableMovement(this.ship);
                     this.ship.get(Ship.class).countdown = false;
+                    this.smokeParticles.get(ecs.Components.Particles.class).countdown = false;
+                    this.smokeParticles.get(ecs.Components.Particles.class).particles.clear();
                     addEntity(this.ship);
                 });
         sysPause = new ecs.Systems.Pause(graphics,
@@ -90,10 +111,8 @@ public class GameModel {
                     initializeCountdown(fontCountDown);
                 });
         sysWinMessage = new WinMessage(graphics);
-        initializeBackground(background, font);
-        initializeGround();
-        initializeShip(ship, font);
-        initializeCountdown(fontCountDown);
+        sysParticleRenderer = new ParticleRenderer(graphics);
+        sysParticleUpdater = new ParticleUpdater();
     }
 
     public void update(double elapsedTime) {
@@ -103,6 +122,7 @@ public class GameModel {
         sysGroundUpdater.update(elapsedTime);
         sysSpaceShipUpdater.update(elapsedTime);
         sysCollisionUpdater.update(elapsedTime);
+        sysParticleUpdater.update(elapsedTime);
 
         for (var entity : removeThese) {
             removeEntity(entity);
@@ -115,12 +135,13 @@ public class GameModel {
         addThese.clear();
 
         // Because ECS framework, rendering is now part of the update
+        sysWinMessage.update(elapsedTime);
         sysRenderer.update(elapsedTime);
         sysGroundRenderer.update(elapsedTime);
         sysSpaceShipRenderer.update(elapsedTime);
         sysCountdown.update(elapsedTime);
         sysPause.update(elapsedTime);
-        sysWinMessage.update(elapsedTime);
+        sysParticleRenderer.update(elapsedTime);
     }
 
     private void addEntity(Entity entity) {
@@ -134,6 +155,8 @@ public class GameModel {
         sysCountdown.add(entity);
         sysPause.add(entity);
         sysWinMessage.add(entity);
+        sysParticleUpdater.add(entity);
+        sysParticleRenderer.add(entity);
     }
 
     private void removeEntity(Entity entity) {
@@ -147,6 +170,8 @@ public class GameModel {
         sysCountdown.remove(entity.getId());
         sysPause.remove(entity.getId());
         sysWinMessage.remove(entity.getId());
+        sysParticleRenderer.remove(entity.getId());
+        sysParticleUpdater.remove(entity.getId());
     }
 
     private void removeAllEntities() {
@@ -160,16 +185,20 @@ public class GameModel {
         sysCountdown.removeAll();
         sysPause.removeAll();
         sysWinMessage.removeAll();
+        sysParticleUpdater.removeAll();
+        sysParticleRenderer.removeAll();
     }
 
     private void initializeWinMessage(Texture image, Font font, int score) {
         var winMessage = ecs.Entities.WinMessage.create(image, font, score);
+        this.winMessage = winMessage;
         addEntity(winMessage);
     }
 
     private void initializeCountdown(Font font) {
         var countDown = ecs.Entities.Countdown.create(font);
         this.ship.get(ecs.Components.Ship.class).countdown = true;
+        this.smokeParticles.get(ecs.Components.Particles.class).countdown = true;
         addEntity(countDown);
     }
 
@@ -200,6 +229,20 @@ public class GameModel {
         var pause = Pause.create(image, Color.WHITE, font);
         addEntity(pause);
         this.pause = pause;
+    }
+
+    private void initializeParticle(Texture image, Texture fire) {
+        var particles = Particles.create(
+                image,
+                fire,
+                Color.WHITE,
+                new Vector2f(0, 0),
+                0.01f, 0.005f,
+                0.12f, 0.05f,
+                2, 0.5f
+        );
+        this.smokeParticles = particles;
+        addEntity(particles);
     }
 
 }

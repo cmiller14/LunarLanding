@@ -10,6 +10,7 @@ public class Ship extends Component{
     public int level;
     public float time;
     public float scoreCountdown;
+    public double crashCountdown;
     public float fuel;
     public float speed;
     public float angle;
@@ -27,6 +28,7 @@ public class Ship extends Component{
         this.launchPause = false;
         this.level = 1;
         this.countdown = false;
+        this.crashCountdown = 3;
     }
 
     public Ship(Ship ship) {
@@ -42,5 +44,6 @@ public class Ship extends Component{
         this.launchPause = ship.launchPause;
         this.level = ship.level;
         this.countdown = ship.countdown;
+        this.crashCountdown = ship.crashCountdown;
     }
 }

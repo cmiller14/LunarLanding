@@ -28,7 +28,7 @@ public class Pause extends System {
                 var appearance = entity.get(ecs.Components.Appearance.class);
                 if (pause.pause) {
                     renderWords(appearance);
-                    Rectangle area = new Rectangle(-1f,-1f,2.0f,2.0f, 0.35f);
+                    Rectangle area = new Rectangle(-1f,-1f,2.0f,2.0f, 0.6f);
                     graphics.draw(appearance.image, area, appearance.color);
                 } else {
                     onComplete.invoke(entity);
@@ -43,7 +43,7 @@ public class Pause extends System {
         String escapeMessage = "Press q to quit";
         float width1 = appearance.font.measureTextWidth(unpauseMessage, TXT_HEIGHT);
         float width2 = appearance.font.measureTextWidth(escapeMessage, TXT_HEIGHT);
-        graphics.drawTextByHeight(appearance.font, unpauseMessage,0.0f - width1 / 2, 0 - TXT_HEIGHT /2, TXT_HEIGHT, 0.4f, appearance.color);
-        graphics.drawTextByHeight(appearance.font, escapeMessage, 0.0f - width2 / 2, (0- TXT_HEIGHT /2) - TXT_HEIGHT, TXT_HEIGHT,0.4f, appearance.color);
+        graphics.drawTextByHeight(appearance.font, unpauseMessage,0.0f - width1 / 2, 0 - TXT_HEIGHT /2, TXT_HEIGHT, 0.7f, appearance.color);
+        graphics.drawTextByHeight(appearance.font, escapeMessage, 0.0f - width2 / 2, (0- TXT_HEIGHT /2) - TXT_HEIGHT, TXT_HEIGHT,0.7f, appearance.color);
     }
 }

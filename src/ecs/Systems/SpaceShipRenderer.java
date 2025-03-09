@@ -1,6 +1,5 @@
 package ecs.Systems;
 
-import edu.usu.graphics.Color;
 import edu.usu.graphics.Graphics2D;
 import edu.usu.graphics.Rectangle;
 import org.joml.Vector2f;

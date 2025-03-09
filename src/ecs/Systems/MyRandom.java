@@ -21,6 +21,17 @@ public class MyRandom extends Random {
     }
 
     /// <summary>
+    /// Generate a random vector about a range of angles in a circle
+    /// </summary>
+    public Vector2f nextCircleVectorRange(float min, float max) {
+        float angle = (float) (this.nextRange(min, max) * 2.0 * Math.PI);
+        float x = (float) Math.cos(angle);
+        float y = (float) Math.sin(angle);
+
+        return new Vector2f(x, y);
+    }
+
+    /// <summary>
     /// Generate a random vector about a unit circle
     /// </summary>
     public Vector2f nextCircleVector() {

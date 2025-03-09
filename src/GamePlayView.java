@@ -1,7 +1,5 @@
-import edu.usu.graphics.Color;
 import edu.usu.graphics.Font;
 import edu.usu.graphics.Graphics2D;
-import org.joml.Vector3f;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -23,6 +21,7 @@ public class GamePlayView extends GameStateView {
         inputKeyboard.registerCommand(GLFW_KEY_Q, true, (double elapsedTime) -> {
             nextGameState = GameStateEnum.MainMenu;
         });
+
     }
 
     @Override
@@ -31,6 +30,8 @@ public class GamePlayView extends GameStateView {
         gameModel.initialize(graphics);
         nextGameState = GameStateEnum.GamePlay;
     }
+
+
 
     @Override
     public GameStateEnum processInput(double elapsedTime) {
