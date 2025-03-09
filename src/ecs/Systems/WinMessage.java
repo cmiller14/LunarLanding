@@ -35,7 +35,7 @@ public class WinMessage extends System {
         String escapeMessage = "Press q to quit";
         float width1 = appearance.font.measureTextWidth(scoreMessage, TXT_HEIGHT);
         float width2 = appearance.font.measureTextWidth(escapeMessage, TXT_HEIGHT);
-        graphics.drawTextByHeight(appearance.font, scoreMessage,0.0f - width1 / 2, 0 - TXT_HEIGHT /2, TXT_HEIGHT, 0.4f, appearance.color);
-        graphics.drawTextByHeight(appearance.font, escapeMessage, 0.0f - width2 / 2, (0- TXT_HEIGHT /2) - TXT_HEIGHT, TXT_HEIGHT,0.4f, appearance.color);
+        graphics.drawTextByHeight(appearance.font, scoreMessage,0.0f - width1 / 2, 0 - TXT_HEIGHT /2, TXT_HEIGHT, 0.8f, appearance.color);
+        graphics.drawTextByHeight(appearance.font, escapeMessage, 0.0f - width2 / 2, (0- TXT_HEIGHT /2) - TXT_HEIGHT, TXT_HEIGHT,0.8f, appearance.color);
     }
 }

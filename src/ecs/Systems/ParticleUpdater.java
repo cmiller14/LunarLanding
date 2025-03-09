@@ -2,8 +2,6 @@ package ecs.Systems;
 
 import ecs.Components.Particle;
 import ecs.Components.Particles;
-import ecs.Components.Ship;
-import edu.usu.graphics.Texture;
 import org.joml.Vector2f;
 
 import java.util.ArrayList;
@@ -11,6 +9,7 @@ import java.util.List;
 
 public class ParticleUpdater extends System{
     private final MyRandom random = new MyRandom();
+    boolean explosion = false;
 
     @Override
     public void update(double gameTime) {
@@ -43,18 +42,12 @@ public class ParticleUpdater extends System{
                 for (Long key : removeMe) {
                     particles.particles.remove(key);
                 }
-                // create new particles
+                // createThrustParticle new particles
                 if (particles.createParticles) {
-                    for (int i = 0; i < 3; i++) {
-                        var particle = create(particles, 0.1f, 0.4f);
-                        particles.particles.put(particle.name, particle);
-                    }
+                    shipThrust(3, particles, 0.1f, 0.4f);
                 }
-                if (crash) {
-                    for (int i = 0; i < 1; i++) {
-                        var particle = create(particles, 0.0f, 1.0f);
-                        particles.particles.put(particle.name, particle);
-                    }
+                if (crash && !explosion) {
+                    shipCrash(particles);
                 };
             }
         }
@@ -88,7 +81,33 @@ public class ParticleUpdater extends System{
         }
     }
 
-    private Particle create(Particles particles, float min, float max) {
+    private void shipThrust(int x, Particles particles, float min, float max) {
+        for (int i = 0; i < x; i++) {
+            var particle = createThrustParticle(particles, min, max);
+            particles.particles.put(particle.name, particle);
+        }
+    }
+
+    private void shipCrash(Particles particles) {
+        for (int i = 0; i < 5; i++) {
+            var particle = createExplosionParticle(particles);
+            particles.particles.put(particle.name, particle);
+        }
+    }
+
+    private Particle createExplosionParticle(Particles particles) {
+        float size = 0.1f;
+        var p = new Particle(
+                new Vector2f(particles.center.x, particles.center.y),
+                this.random.nextCircleVector(),
+                0.12f,
+                new Vector2f(size,size),
+                particles.lifetimeMean
+        );
+        return p;
+    }
+
+    private Particle createThrustParticle(Particles particles, float min, float max) {
         float size = (float) this.random.nextGaussian(particles.sizeMean, particles.sizeStdDev);
         var p = new Particle(
                 new Vector2f(particles.center.x, particles.center.y),

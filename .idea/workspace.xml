@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/audio/effect-1.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/audio/effect-2.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/audio/thruster.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/CrashSound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/ThrustSound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/WinSound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestate.json" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AboutView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlsView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStateEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HelpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelpView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/ParticleUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/ParticleUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/WinMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/WinMessage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
