@@ -43,9 +43,15 @@ public class HelpView extends GameStateView {
     @Override
     public void render(double elapsedTime) {
         final String message = "This is how to play the game";
+        final String message1 = "Up arrow key to thrust ship";
+        final String message2 = "Left and Right arrow keys to rotate ship";
         final float height = 0.075f;
         final float width = font.measureTextWidth(message, height);
+        final float width1 = font.measureTextWidth(message1, height);
+        final float width2 = font.measureTextWidth(message2, height);
 
         graphics.drawTextByHeight(font, message, 0.0f - width / 2, 0 - height / 2, height, Color.YELLOW);
+        graphics.drawTextByHeight(font, message1, 0.0f - width1 / 2, 0 - height / 2 + 0.075f, height, Color.YELLOW);
+        graphics.drawTextByHeight(font, message2, 0.0f - width2 / 2, 0 - height / 2 + 0.075f + 0.075f, height, Color.YELLOW);
     }
 }

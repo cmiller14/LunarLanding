@@ -5,6 +5,5 @@ public enum GameStateEnum {
     HighScores,
     Help,
     About,
-    Controls,
     Quit
 }

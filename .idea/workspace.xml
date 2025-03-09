@@ -5,32 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8858ee06-ea5c-4baa-8898-f17b08ca1729" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/fire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/smoke.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HighScoresGameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Serializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Fire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Particle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Components/Particles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Entities/Particles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/ParticleRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/Systems/ParticleUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/audio/effect-1.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/audio/effect-2.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/audio/thruster.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/CrashSound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/ThrustSound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/Components/WinSound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LunarLanding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LunarLanding.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamestate.json" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AboutView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlsView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePlayView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePlayView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStateEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HelpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelpView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HighScoresView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HighScoresView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Components/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Components/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/WinMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/WinMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/KeyboardInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/KeyboardInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/MyRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/MyRandom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/Systems/Pause.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/Pause.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Entities/SpaceShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/Systems/UpdateSpaceShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
     </list>
@@ -71,7 +61,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/chasemiller/Documents/College/CS5410/LundarLanding/resources/images",
+    "last_opened_file_path": "/Users/chasemiller/Documents/College/CS5410/LundarLanding/resources/audio",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -80,6 +70,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/audio" />
       <recent name="$PROJECT_DIR$/resources/images" />
       <recent name="$PROJECT_DIR$/.idea/libraries" />
       <recent name="$PROJECT_DIR$" />

@@ -28,7 +28,6 @@ public class Game {
                 put(GameStateEnum.HighScores, new HighScoresView());
                 put(GameStateEnum.Help, new HelpView());
                 put(GameStateEnum.About, new AboutView());
-                put(GameStateEnum.Controls, new ControlsView());
             }
 
         };

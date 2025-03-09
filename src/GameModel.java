@@ -1,10 +1,13 @@
 import ecs.Components.Ship;
+import ecs.Components.ThrustSound;
 import ecs.Entities.*;
 import ecs.Entities.Pause;
 import ecs.Systems.*;
 import ecs.Systems.Countdown;
 import ecs.Systems.KeyboardInput;
 import ecs.Systems.WinMessage;
+import edu.usu.audio.Sound;
+import edu.usu.audio.SoundManager;
 import edu.usu.graphics.*;
 import edu.usu.graphics.Color;
 import edu.usu.graphics.Font;
@@ -38,6 +41,7 @@ public class GameModel {
     private int safeZones = 2;
 
     private Entity ship;
+    private SoundManager audio;
     private final float startX = 0.0f;
     private final float startY = -0.65f;
 
@@ -54,11 +58,15 @@ public class GameModel {
         var fireImage = new Texture("resources/images/fire.png");
         var font = new Font("resources/fonts/Roboto-Regular.ttf", 36, false);
         var fontCountDown = new Font("resources/fonts/Roboto-Regular.ttf", 72, false);
+        this.audio = new SoundManager();
+        Sound crash = audio.load("crash", "resources/audio/effect-1.ogg", false);
+        Sound win = audio.load("win", "resources/audio/effect-2.ogg", false);
+        Sound thrust = audio.load("thrust", "resources/audio/thruster.ogg", false);
 
         initializeSystems(graphics, pauseImage, fontCountDown);
         initializeBackground(background, font);
         initializeGround();
-        initializeShip(ship, font);
+        initializeShip(ship, font, win, crash, thrust);
         initializeParticle(smokeImage, fireImage);
         initializeCountdown(fontCountDown);
     }
@@ -75,6 +83,7 @@ public class GameModel {
                     // save the score
                     this.serializer.saveScore(winMessage.get(ecs.Components.WinMessage.class));
                     // instructions for how to close escape
+                    this.ship.get(ThrustSound.class).sound.cleanup();
                 }
         );
         sysSpaceShipRenderer = new SpaceShipRenderer(graphics);
@@ -218,9 +227,9 @@ public class GameModel {
         addEntity(ground);
     }
 
-    private void initializeShip(Texture image, Font font) {
+    private void initializeShip(Texture image, Font font, Sound win, Sound crash, Sound thrust) {
         float width = 1/5f;
-        var ship = SpaceShip.create(image, font, Color.WHITE, startX, startY, width);
+        var ship = SpaceShip.create(image, font, Color.WHITE, win, crash, thrust, startX, startY, width);
         this.ship = ship;
         addEntity(ship);
     }

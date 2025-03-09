@@ -1,6 +1,7 @@
 package ecs.Entities;
 
 import ecs.Components.Appearance;
+import edu.usu.audio.Sound;
 import edu.usu.graphics.Color;
 import edu.usu.graphics.Font;
 import edu.usu.graphics.Texture;
@@ -12,7 +13,15 @@ import static org.lwjgl.glfw.GLFW.*;
 public class SpaceShip {
 
 
-    public static Entity create(Texture image, Font font, Color color, float x, float y, float width) {
+    public static Entity create(Texture image,
+                                Font font,
+                                Color color,
+                                Sound win,
+                                Sound crash,
+                                Sound thrust,
+                                float x,
+                                float y,
+                                float width) {
 
         var spaceShip = new Entity();
 
@@ -21,6 +30,9 @@ public class SpaceShip {
         spaceShip.get(Appearance.class).font = font;
         spaceShip.add(new ecs.Components.Position(x, y, width));
         spaceShip.add(new ecs.Components.Collision());
+        spaceShip.add(new ecs.Components.WinSound(win, "win"));
+        spaceShip.add(new ecs.Components.CrashSound(crash, "crash"));
+        spaceShip.add(new ecs.Components.ThrustSound(thrust, "thrust"));
         return spaceShip;
     }
 

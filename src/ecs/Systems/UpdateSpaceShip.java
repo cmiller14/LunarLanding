@@ -1,13 +1,12 @@
 package ecs.Systems;
 
-import ecs.Components.Movable;
-import ecs.Components.Position;
-import ecs.Components.Ship;
+import ecs.Components.*;
 import ecs.Entities.Entity;
 
 public class UpdateSpaceShip extends System {
     private Ship pauseShip;
     private Position pausePosition;
+    private boolean crash = false;
 
     public interface IShipComplete {
         void invoke();
@@ -17,10 +16,10 @@ public class UpdateSpaceShip extends System {
     private final UpdateSpaceShip.IShipComplete onCrash;
     private final UpdateSpaceShip.IShipComplete onPause;
 
-    public UpdateSpaceShip(IShipComplete onComplete, IShipComplete onWin, IShipComplete onPause) {
+    public UpdateSpaceShip(IShipComplete onComplete, IShipComplete onCrash, IShipComplete onPause) {
         super(ecs.Components.Ship.class);
         this.onComplete = onComplete;
-        this.onCrash = onWin;
+        this.onCrash = onCrash;
         this.onPause = onPause;
         this.pauseShip = new Ship();
         this.pausePosition = new Position(0.0f, 0.0f, 0.0f);
@@ -71,12 +70,19 @@ public class UpdateSpaceShip extends System {
 
         // stop ship if win or collision
         if (ship.win) {
+            entity.get(WinSound.class).sound.play();
+            entity.get(ThrustSound.class).sound.stop();
             resetShip(entity);
             onComplete.invoke();
             return;
         }
 
         if (ship.collision) {
+            if (!crash) {
+                entity.get(CrashSound.class).sound.play();
+                entity.get(ThrustSound.class).sound.cleanup();
+                crash = true;
+            }
             position.velocityY = 0f;
             position.velocityX = 0f;
             ship.crashCountdown -= elapsedTime;
@@ -90,7 +96,7 @@ public class UpdateSpaceShip extends System {
         float ROTATION = 1.5f;
 
         updateRotation((float) elapsedTime, movable, position, ship, ROTATION);
-        updateVelocity((float) elapsedTime, movable, position, ship, ACCELERATION);
+        updateVelocity((float) elapsedTime, movable, position, ship, entity.get(ecs.Components.ThrustSound.class), ACCELERATION);
 
         // add gravity
         float GRAVITY = 0.06f;
@@ -142,7 +148,7 @@ public class UpdateSpaceShip extends System {
         position.y = Math.min(1.0f, Math.max(position.y, -1.0f));
     }
 
-    private void updateVelocity(float elapsedTime, Movable movable, Position position, Ship ship, float ACCELERATION) {
+    private void updateVelocity(float elapsedTime, Movable movable, Position position, Ship ship, ThrustSound sound, float ACCELERATION) {
         // first I should update the velocity based on acceleration and rotation
         if (ship.fuel <= 0) {
             ship.fuel = 0;
@@ -155,6 +161,9 @@ public class UpdateSpaceShip extends System {
             position.velocityY -= accelerationY * elapsedTime;
             position.velocityX -= accelerationX * elapsedTime;
             ship.fuel -= elapsedTime;
+            if (!sound.sound.isPlaying()) sound.sound.play();
+        } else {
+            sound.sound.stop();
         }
     }
 
